@@ -1,10 +1,14 @@
+import { useState } from "react";
 import "./styles.css";
+import { explorer } from "./data/folderData";
+import { Folder } from "./components/Folder";
 
 export default function App() {
+  const [explorerData, setExplorerData] = useState(explorer);
+
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <Folder explorer={explorerData} />
     </div>
   );
 }
